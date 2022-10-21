@@ -1,0 +1,17 @@
+{% extends 'web/base.tmpl.html' %}
+{%load static%}
+{%block title%}
+Index
+{%endblock%}
+{%block head%}
+<base href="/">
+<link rel="stylesheet" href="{% static 'styles.css' %}"/>
+{% endblock %}
+
+{%block body%}
+<app-root></app-root>
+<script src="{% static 'runtime.js'%}" type="module"></script>
+<script src="{% static 'polyfills.js'%}" type="module"></script>
+<script src="{% static 'vendor.js'%}" type="module"></script>
+<script src="{% static 'main.js'%}" type="module"></script>
+{%endblock%}
