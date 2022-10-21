@@ -1,0 +1,5 @@
+<div class="grid grid-cols-4 gap-2 grid-flow-row-dense p-4">
+  <ng-container *ngFor="let peer of connections;let i = index">
+    <app-video-card [peer]="peer.conn" [index]="i"></app-video-card>
+  </ng-container>
+</div>

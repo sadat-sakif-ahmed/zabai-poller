@@ -1,0 +1,11 @@
+<div class="block min-h-screen w-full overflow-auto">
+  <div class="flex flex-row items-center justify-between py-4 px-6 bg-indigo-700 shadow">
+    <h1 class="text-xl font-medium">Joined Room {{roomName}} as {{userName}}</h1>
+    <div class="flex flex-row gap-4">
+      <!-- todo: Add Notifications -->
+    </div>
+  </div>
+  <app-video-preview [streamSource]="selfStream"></app-video-preview>
+  <app-video-grid [connections]="remotes"></app-video-grid>
+  <app-chat-component></app-chat-component>
+</div>

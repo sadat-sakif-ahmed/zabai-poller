@@ -1,0 +1,6 @@
+<div class="relative block w-80 h-60 border border-slate-600 bg-slate-800">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <span class="text-3xl font-medium">{{peer.id}}</span>
+  </div>
+  <video #vidStream [srcObject]="stream" [autoplay]="true"></video>
+</div>

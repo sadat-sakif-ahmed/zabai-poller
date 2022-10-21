@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let msg of messages|async">
+    <div>
+      <h5 class="text-lg font-medium">{{msg.type}}</h5>
+      <p>{{msg.data}}</p>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,13 @@
+<!-- <app-self-video [username]="session.username" [source]="localStream"></app-self-video> -->
+<div class="absolute right-0 bottom-0">
+</div>
+<div class="grid grid-cols-4 grid-flow-row-dense gap-3">
+  <ng-container #peerContainer></ng-container>
+</div>
+<!-- <app-chat-box [username]="session.username"></app-chat-box> -->
+<app-room-poll [username]="session.username" [roomname]="session.roomname"></app-room-poll>
+<ng-template #peerStream let-stream="stream">
+  <div class="col-span-1 w-full h-full">
+    <video [srcObject]="stream" [autoplay]="true" [muted]="true"></video>
+  </div>
+</ng-template>

@@ -1,0 +1,56 @@
+<div class="block min-h-screen w-full overflow-auto">
+  <div class="flex flex-row items-center py-4 px-6 bg-indigo-700 shadow">
+    <h1 class="text-xl font-medium">Conferencing</h1>
+  </div>
+  <div>
+    <div class="container p-6 lg:p-24">
+      <div class="flex">
+        <div class="relative flex justify-center w-9/12">
+          <video #mediaPreview [autoplay]="true" [muted]="mediaTracks.audio"
+            class="border border-slate-600 bg-slate-800" src=""></video>
+          <div class="absolute left-1/2 bottom-6 -translate-x-1/2">
+            <div class="flex gap-4">
+              <button (click)="toggleVideo()"
+                class="outline-none appearance-none focus:ring shadow rounded-full p-2 {{mediaTracks.video == true ? 'bg-slate-600/50 ring-slate-400' : 'bg-red-600 ring-red-400'}}">
+                <span class="sr-only">Toggle Video</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round"
+                    d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                  3
+                </svg>
+              </button>
+              <button (click)="toggleAudio()"
+                class="outline-none appearance-none focus:ring shadow rounded-full p-2 {{mediaTracks.audio == true ? 'bg-slate-600/50 ring-slate-400' : 'bg-red-600 ring-red-400'}}">
+                <span class="sr-only">Toggle Audio</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                </svg>
+
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-3/12">
+          <div class="flex flex-col gap-5">
+
+            <h3 class="w-full text-2xl font-medium">
+              Connect to '{{session?.roomname}}' as '{{session?.username}}' ?
+            </h3>
+            <a role="button" (click)="joinRoom()"
+              class="text-lg font-medium text-center px-3 py-2 rounded transition-all duration-300 ease-in-out hover:ring ring-indigo-600 bg-slate-800 hover:bg-indigo-700">Join
+              Room</a>
+            <a role="button" (click)="exitSession()"
+              class="text-lg font-medium text-center px-3 py-2 rounded transition-all duration-300 ease-in-out hover:ring ring-indigo-600 bg-slate-800 hover:bg-indigo-700">Exit
+              Session</a>
+            <a role="button" (click)="shareLink()"
+              class="text-lg font-medium text-center px-3 py-2 rounded transition-all duration-300 ease-in-out hover:ring ring-indigo-600 bg-slate-800 hover:bg-indigo-700">Share
+              Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

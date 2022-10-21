@@ -1,0 +1,24 @@
+<div class="flex flex-col w-64 bg-slate-600 px-3 py-2">
+  <div>
+    <ng-container *ngFor="let message of messages|async">
+      <div class="py-2 px-3">
+        <span class="block w-full">{{message.msg}}</span>
+        <span class="block w-full text-xs text-right italic">{{message.from}}</span>
+      </div>
+    </ng-container>
+
+  </div>
+  <div class="flex">
+    <input title="Chat Message" placeholder="Enter Message Here..." type="text" [(ngModel)]="chatMessage"
+      class="appearance-none outline-none rounded border px-3 py-2 transition-all duration-200 ease-out border-slate-700 bg-slate-800 focus:ring focus:border-indigo-600 focus:ring-indigo-600/50">
+    <button (click)="sendMessage()" class="outline-none appearance-none focus:ring shadow rounded-full p-2 ">
+      <span class="sr-only">Video Toggle</span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+      </svg>
+
+    </button>
+  </div>
+</div>
